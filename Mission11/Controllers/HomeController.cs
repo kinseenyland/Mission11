@@ -16,8 +16,8 @@ namespace Mission11.Controllers
 
         public IActionResult Index(int pageNum)
         {
-            int pageSize = 5;
-            var blah = new BooksListViewModel
+            int pageSize = 10;
+            var bookInfo = new BooksListViewModel
             {
                 Books = _repo.Books
                     .OrderBy(x => x.Title)
@@ -32,7 +32,7 @@ namespace Mission11.Controllers
                 }
             };
 
-            return View(blah);
+            return View(bookInfo);
         }
     }
 }
